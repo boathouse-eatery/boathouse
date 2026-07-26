@@ -12,7 +12,11 @@ const pathToAnchor: Record<string, string> = {
 
 function MenuSectionBlock({ section }: { section: MenuSection }) {
   return (
-    <section id={section.id} className="scroll-mt-28 border-b border-bay-100 py-14 last:border-none">
+    <section
+      id={section.id}
+      // clears the fixed header *and* the sticky section nav below it
+      className="scroll-mt-[calc(var(--header-h-condensed)+4.5rem)] border-b border-bay-100 py-14 last:border-none"
+    >
       <Reveal>
         <h2 className="font-serif text-2xl font-semibold text-bay-800 sm:text-3xl">
           {section.title}
@@ -67,10 +71,10 @@ export function Menus() {
         image={images.fishAndChips}
       />
 
-      <div className="bg-sand-50">
+      <div className="bg-white">
         <nav
           aria-label="Menu sections"
-          className="sticky top-16 z-30 -mt-px flex gap-6 overflow-x-auto border-b border-bay-100 bg-sand-50/95 px-6 py-4 backdrop-blur scrollbar-none sm:justify-center sm:px-8"
+          className="sticky top-[var(--header-h-condensed)] z-30 -mt-px flex gap-6 overflow-x-auto border-b border-bay-100 bg-white/95 px-6 py-4 backdrop-blur scrollbar-none sm:justify-center sm:px-8"
         >
           {allMenuSections.map((section) => (
             <a

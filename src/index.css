@@ -38,8 +38,18 @@
   --shadow-soft: 0 10px 40px -12px rgba(15, 35, 47, 0.35);
 }
 
+:root {
+  /* Fixed header height: logo (44px) + vertical padding.
+     76px at rest, 68px once condensed on scroll. */
+  --header-h: 76px;
+  --header-h-condensed: 68px;
+}
+
 html {
   scroll-behavior: smooth;
+  /* Keeps anchor targets clear of the fixed header instead of
+     scrolling them underneath it. */
+  scroll-padding-top: calc(var(--header-h) + 1rem);
 }
 
 @media (prefers-reduced-motion: reduce) {
