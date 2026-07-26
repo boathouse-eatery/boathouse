@@ -9,13 +9,17 @@ type Props = {
 };
 
 export function PageBanner({ eyebrow, title, subtitle, image }: Props) {
+  // min-h (not a fixed h) so the banner grows when the heading wraps — a
+  // fixed height let tall content overflow upward under the fixed header.
+  // The top padding clears the header explicitly rather than relying on
+  // the box being tall enough.
   return (
-    <section className="relative flex h-[52vh] min-h-[340px] items-end overflow-hidden">
+    <section className="relative flex min-h-[26rem] items-end overflow-hidden sm:min-h-[52vh]">
       <div className="absolute inset-0">
         <Photo image={image} priority className="h-full w-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-bay-950/90 via-bay-950/55 to-bay-950/40" />
       </div>
-      <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-12 pt-28 sm:px-8">
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-12 pt-[calc(var(--header-h)+2.5rem)] sm:px-8">
         <p className="flex items-center gap-3 font-sans text-xs font-semibold uppercase tracking-[0.25em] text-amber-300">
           <span className="h-px w-8 bg-amber-300/70" />
           {eyebrow}
