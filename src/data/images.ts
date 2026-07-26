@@ -12,7 +12,7 @@ export type SiteImage = {
 export const images = {
   logo: {
     src: "/images/boathouse-round-logo.jpg",
-    alt: "The Boathouse Eatery logo — an anchor with fork tines over Georgian Bay waves",
+    alt: "The Boathouse Eatery logo, an anchor with fork tines over Georgian Bay waves",
   },
   patioSunset: {
     src: "/images/patio-sunset-crowd.jpeg",
@@ -26,7 +26,7 @@ export const images = {
   },
   tikiHut: {
     src: "/images/tiki-hut-patio.jpeg",
-    alt: "The Tiki Hut bar at dusk — thatched roof, shade sails, palms and warm string lights over the deck",
+    alt: "The Tiki Hut bar at dusk with its thatched roof, shade sails, palms and warm string lights over the deck",
     focus: "50% 50%",
   },
   barInterior: {
@@ -36,7 +36,7 @@ export const images = {
   },
   interiorPaddleboard: {
     src: "/images/interior-paddleboard.jpeg",
-    alt: "Inside the restaurant — warm pine floors, a paddleboard mounted above the beam and a hand-painted washrooms sign",
+    alt: "Inside the restaurant, with warm pine floors, a paddleboard mounted above the beam and a hand-painted washrooms sign",
     focus: "50% 55%",
   },
   liveMusic: {

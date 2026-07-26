@@ -29,7 +29,7 @@ export function LiveMusic() {
               <p className="font-sans text-sm text-amber-800">
                 <strong className="font-semibold">Sample schedule.</strong>{" "}
                 Live entertainment runs Thursday through Sunday. The act names
-                below are placeholders to show the layout — swap in the real
+                below are placeholders to show the layout. Swap in the real
                 booking calendar in{" "}
                 <code className="rounded bg-amber-100 px-1 py-0.5 text-xs">
                   src/data/liveMusic.ts

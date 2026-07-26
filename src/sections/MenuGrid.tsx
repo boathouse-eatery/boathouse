@@ -31,7 +31,7 @@ export function MenuGrid() {
         <div className="mt-12 grid gap-6 lg:grid-cols-3">
           <Reveal className="lg:col-span-1">
             <Link
-              to="/menus#lunch-dinner"
+              to="/menus#entrees"
               className="group relative flex h-full min-h-[340px] flex-col justify-end overflow-hidden rounded-2xl shadow-soft"
             >
               <Photo

@@ -28,7 +28,7 @@ export function Hero() {
             Georgian Bay.
           </h1>
           <p className="mt-6 max-w-xl font-sans text-lg leading-relaxed text-white/85 sm:text-xl">
-            Three decades on the Midland waterfront — fresh plates, cold
+            Three decades on the Midland waterfront. Fresh plates, cold
             drinks, live music Thursday through Sunday, and a patio that
             watches the sun go down over the docks.
           </p>

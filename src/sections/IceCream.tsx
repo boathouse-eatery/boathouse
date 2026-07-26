@@ -23,7 +23,7 @@ export function IceCream() {
             Dockside Sweets &amp; Treats
           </h2>
           <p className="mt-6 font-sans text-base leading-relaxed text-bay-600 sm:text-lg">
-            Our walk-up ice cream hut right on the boardwalk — hard scoops,
+            Our walk-up ice cream hut right on the boardwalk. Hard scoops,
             slushies and cold drinks, no reservation required. Grab a cone and
             take a lap of the Town Docks, or finish dinner with one on the way
             back to the boat.

@@ -26,7 +26,7 @@ export function About() {
             </h2>
             <p className="mt-6 font-sans text-base leading-relaxed text-bay-700 sm:text-lg">
               The Boathouse Eatery has anchored the Town Docks of Midland for
-              close to three decades — long enough to have served multiple
+              close to three decades, long enough to have served multiple
               generations of the same families, welcomed countless boaters in
               off the bay, and watched a few thousand sunsets from the same
               stretch of shoreline.
@@ -70,13 +70,13 @@ export function About() {
             </h2>
             <p className="mt-6 font-sans text-base leading-relaxed text-sand-200 sm:text-lg">
               Cedar planks, Edison bulbs, and open water as far as you can
-              see — our patio is built to make the most of every Midland
+              see. Our patio is built to make the most of every Midland
               summer evening. It's where an after-work beer turns into
               dinner, and dinner turns into staying for the band.
             </p>
             <p className="mt-4 font-sans text-base leading-relaxed text-sand-200 sm:text-lg">
               Live entertainment runs Thursday through Sunday, and the kitchen
-              and bar keep going right alongside it — craft cocktails,
+              and bar keep going right alongside it: craft cocktails,
               made-from-scratch desserts, and a menu built for sharing.
             </p>
           </Reveal>

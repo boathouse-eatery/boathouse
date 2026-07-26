@@ -17,7 +17,7 @@ const spaces = [
   {
     image: images.interiorPaddleboard,
     title: "The Dining Room",
-    copy: "Warm pine, weathered timber and dockside character — comfortable year-round, whatever the weather is doing outside.",
+    copy: "Warm pine, weathered timber and dockside character, comfortable year-round whatever the weather is doing outside.",
   },
 ];
 

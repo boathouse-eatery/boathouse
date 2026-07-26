@@ -22,7 +22,7 @@ export function Contact() {
       <PageBanner
         eyebrow="Contact"
         title="Get in touch"
-        subtitle="Questions, private events, or feedback — we'd love to hear from you."
+        subtitle="Questions, private events, or feedback. We'd love to hear from you."
         image={images.tikiHut}
       />
 
@@ -113,7 +113,7 @@ export function Contact() {
                 <div className="mt-8 rounded-2xl bg-bay-700 p-6 text-sand-50" role="status">
                   <p className="font-serif text-lg font-semibold">Thanks for reaching out!</p>
                   <p className="mt-2 font-sans text-sm text-sand-200">
-                    This is a front-end mockup form — in the live site this
+                    This is a front-end mockup form. In the live site this
                     would notify our team directly. We'll follow up as soon
                     as possible.
                   </p>

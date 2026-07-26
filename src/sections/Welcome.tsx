@@ -27,7 +27,7 @@ export function Welcome() {
             the band starts.
           </p>
           <p className="mt-4 font-sans text-base leading-relaxed text-bay-600 sm:text-lg">
-            The kitchen keeps it fresh and unfussy — beer-battered fish and
+            The kitchen keeps it fresh and unfussy: beer-battered fish and
             chips, shareable plates, crisp salads, craft cocktails and
             desserts made from scratch. Casual fine dining, no stiff collars
             required.

@@ -26,8 +26,8 @@ export function Footer() {
         <div>
           <Logo light size={48} />
           <p className="mt-4 text-sm leading-relaxed text-bay-100/90 max-w-xs">
-            Waterfront dining on Georgian Bay at the Town Docks of Midland —
-            fresh food, cold drinks, and live music, three decades running.
+            Waterfront dining on Georgian Bay at the Town Docks of Midland.
+            Fresh food, cold drinks, and live music, three decades running.
           </p>
           <div className="mt-5 flex items-center gap-3">
             <a

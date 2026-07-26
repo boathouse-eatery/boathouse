@@ -15,7 +15,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     quote:
-      "The patio at sunset is unbeatable — we come for the view and stay for the calamari. Our new go-to spot on the water.",
+      "The patio at sunset is unbeatable. We come for the view and stay for the calamari. Our new go-to spot on the water.",
     author: "Placeholder Guest",
     isPlaceholder: true,
   },

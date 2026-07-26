@@ -1,16 +1,17 @@
-import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
 import { PageBanner } from "../components/PageBanner";
 import { Reveal } from "../components/Reveal";
-import { allMenuSections, type MenuSection } from "../data/menu";
+import { allMenuSections, happyHour, type MenuSection } from "../data/menu";
 import { images } from "../data/images";
 
-const pathToAnchor: Record<string, string> = {
-  "/menus/kids": "kids",
-  "/menus/desserts": "desserts",
+const tagStyles: Record<string, string> = {
+  Vegetarian: "bg-green-50 text-green-700 ring-green-200",
+  Vegan: "bg-emerald-50 text-emerald-700 ring-emerald-200",
+  GF: "bg-amber-50 text-amber-700 ring-amber-200",
+  Spicy: "bg-red-50 text-red-700 ring-red-200",
 };
 
 function MenuSectionBlock({ section }: { section: MenuSection }) {
+  const isSides = section.id === "sides";
   return (
     <section
       id={section.id}
@@ -22,21 +23,45 @@ function MenuSectionBlock({ section }: { section: MenuSection }) {
           {section.title}
         </h2>
         {section.note && (
-          <p className="mt-2 font-sans text-sm italic text-bay-500">{section.note}</p>
+          <p className="mt-2 max-w-2xl font-sans text-sm text-bay-500">
+            {section.note}
+          </p>
         )}
-        <div className="mt-8 grid gap-x-10 gap-y-7 sm:grid-cols-2">
+        <div
+          className={
+            isSides
+              ? "mt-8 grid gap-x-10 gap-y-3 sm:grid-cols-2 lg:grid-cols-3"
+              : "mt-8 grid gap-x-10 gap-y-7 sm:grid-cols-2"
+          }
+        >
           {section.items.map((item) => (
-            <div key={item.name} className="flex items-start justify-between gap-4">
+            <div key={item.name} className="flex items-baseline justify-between gap-4">
               <div>
                 <h3 className="font-serif text-lg font-semibold text-bay-800">
                   {item.name}
                 </h3>
-                <p className="mt-1 font-sans text-sm leading-relaxed text-bay-600">
-                  {item.description}
-                </p>
+                {item.description && (
+                  <p className="mt-1 font-sans text-sm leading-relaxed text-bay-600">
+                    {item.description}
+                  </p>
+                )}
                 {item.tags && (
-                  <p className="mt-1.5 font-sans text-xs font-medium uppercase tracking-wide text-amber-600">
-                    {item.tags.join(" · ")}
+                  <p className="mt-2 flex flex-wrap gap-1.5">
+                    {item.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className={`rounded-full px-2 py-0.5 font-sans text-[11px] font-semibold uppercase tracking-wide ring-1 ${
+                          tagStyles[tag] ?? "bg-bay-50 text-bay-600 ring-bay-200"
+                        }`}
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </p>
+                )}
+                {item.options && (
+                  <p className="mt-1.5 font-sans text-xs text-bay-500">
+                    {item.options}
                   </p>
                 )}
               </div>
@@ -52,26 +77,27 @@ function MenuSectionBlock({ section }: { section: MenuSection }) {
 }
 
 export function Menus() {
-  const location = useLocation();
-
-  useEffect(() => {
-    const anchor = pathToAnchor[location.pathname];
-    if (anchor) {
-      const el = document.getElementById(anchor);
-      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  }, [location.pathname]);
-
   return (
     <>
       <PageBanner
         eyebrow="Menus"
         title="Fresh, thoughtfully sourced, made to share"
-        subtitle="All menus below are placeholders for this mockup — swap in the current menu and pricing before launch."
+        subtitle="Our full food menu, served all day on the waterfront."
         image={images.fishAndChips}
       />
 
       <div className="bg-white">
+        <div className="border-b border-amber-200 bg-amber-50">
+          <div className="mx-auto flex max-w-4xl flex-wrap items-center justify-center gap-x-3 gap-y-1 px-6 py-3 text-center sm:px-8">
+            <span className="font-sans text-xs font-bold uppercase tracking-[0.15em] text-amber-700">
+              {happyHour.label}
+            </span>
+            <span className="font-sans text-sm text-amber-800">
+              {happyHour.detail}
+            </span>
+          </div>
+        </div>
+
         <nav
           aria-label="Menu sections"
           className="sticky top-[var(--header-h-condensed)] z-30 -mt-px flex gap-6 overflow-x-auto border-b border-bay-100 bg-white/95 px-6 py-4 backdrop-blur scrollbar-none sm:justify-center sm:px-8"

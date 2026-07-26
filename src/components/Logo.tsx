@@ -14,7 +14,7 @@ export function Logo({ light = false, size = 44, showWordmark = true }: Props) {
     <Link
       to="/"
       className="flex items-center gap-3"
-      aria-label="The Boathouse Eatery — home"
+      aria-label="The Boathouse Eatery, home"
     >
       <span
         className="block shrink-0 overflow-hidden rounded-full ring-1 ring-black/10"

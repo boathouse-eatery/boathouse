@@ -20,7 +20,7 @@ export function ReservationsCta() {
           Join Us on the Waterfront
         </h2>
         <p className="mt-5 font-sans text-base text-white/80 sm:text-lg">
-          Tables fill fast on patio nights — reserve ahead, or give us a call.
+          Tables fill fast on patio nights, so reserve ahead or give us a call.
         </p>
         <div className="mt-9 flex flex-col items-center gap-4 sm:flex-row">
           <Button href={siteInfo.links.reservations} variant="primary">
