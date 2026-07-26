@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Fraunces", ui-serif, Georgia, serif;
+  --font-sans: "Work Sans", ui-sans-serif, system-ui, sans-serif;
+
+  /* Navy → light blue, keyed to the Boathouse anchor logo */
+  --color-bay-50: #f0f5fa;
+  --color-bay-100: #dbe8f4;
+  --color-bay-200: #b8d2e8;
+  --color-bay-300: #8ab4d6;
+  --color-bay-400: #5b90bd;
+  --color-bay-500: #3a6f9f;
+  --color-bay-600: #2b5680;
+  --color-bay-700: #1f4266;
+  --color-bay-800: #17324e;
+  --color-bay-900: #10233a;
+  --color-bay-950: #0a1728;
+
+  /* warm sand / cream neutrals */
+  --color-sand-50: #fdfbf7;
+  --color-sand-100: #f9f3e8;
+  --color-sand-200: #f2e8d5;
+  --color-sand-300: #e8d8b8;
+  --color-sand-400: #dcc491;
+  --color-sand-500: #c9a968;
+
+  /* amber / gold accent (Edison bulb) */
+  --color-amber-50: #fdf6e8;
+  --color-amber-100: #faebc4;
+  --color-amber-200: #f4d68c;
+  --color-amber-300: #edbd57;
+  --color-amber-400: #e5a530;
+  --color-amber-500: #d68e1f;
+  --color-amber-600: #b3701a;
+  --color-amber-700: #8f5719;
+
+  --shadow-soft: 0 10px 40px -12px rgba(15, 35, 47, 0.35);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background-color: var(--color-sand-50);
+  color: var(--color-bay-900);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-serif);
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-amber-400);
+  outline-offset: 2px;
+}
+
+/* scroll-reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
