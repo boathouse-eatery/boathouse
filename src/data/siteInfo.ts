@@ -37,7 +37,7 @@ export const hoursNote = "Open seven days a week";
 export const navLinks = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
-  { label: "Menus", href: "/menus" },
+  { label: "Menu", href: "/menus" },
   { label: "Live Music", href: "/live-music" },
   { label: "Gallery", href: "/gallery" },
   { label: "Contact", href: "/contact" },

@@ -28,8 +28,8 @@ export function Hero() {
             Georgian Bay.
           </h1>
           <p className="mt-6 max-w-xl font-sans text-lg leading-relaxed text-white/85 sm:text-xl">
-            Three decades on the Midland waterfront. Fresh plates, cold
-            drinks, live music Thursday through Sunday, and a patio that
+            Three decades on the Midland waterfront. Fresh, seasonal dishes,
+            cold drinks, live music seven days a week, and a patio that
             watches the sun go down over the docks.
           </p>
 
@@ -38,7 +38,7 @@ export function Hero() {
               Reserve a Table
             </Button>
             <Button href="/menus" variant="outline-light">
-              View Menus
+              View Menu
             </Button>
             <Button href={siteInfo.links.giftCards} variant="outline-light">
               Gift Cards

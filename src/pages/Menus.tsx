@@ -80,7 +80,7 @@ export function Menus() {
   return (
     <>
       <PageBanner
-        eyebrow="Menus"
+        eyebrow="Menu"
         title="Fresh, thoughtfully sourced, made to share"
         subtitle="Our full food menu, served all day on the waterfront."
         image={images.fishAndChips}

@@ -34,7 +34,7 @@ export function Experience() {
           </h2>
           <p className="mt-5 font-sans text-base leading-relaxed text-bay-100 sm:text-lg">
             Cedar planks underfoot, Edison bulbs overhead, and the bay turning
-            amber behind you. Pick your spot.
+            amber behind you. Pick your spot, there's a band on every night.
           </p>
         </Reveal>
 

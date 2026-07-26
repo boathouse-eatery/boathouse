@@ -22,7 +22,7 @@ export function LiveMusicStrip() {
         <Reveal className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
           <div>
             <p className="font-sans text-xs font-semibold uppercase tracking-[0.2em] text-amber-300">
-              Live Music · Thu – Sun
+              Live Music · Seven Days a Week
             </p>
             <h2 className="mt-4 font-serif text-3xl font-semibold leading-tight text-white sm:text-4xl md:text-[2.75rem]">
               Live this week
@@ -46,7 +46,7 @@ export function LiveMusicStrip() {
               <Reveal key={entry.date} delay={i * 80}>
                 <div
                   className={`flex h-full flex-col rounded-2xl p-6 backdrop-blur-sm ${
-                    entry.act
+                    entry.acts.length > 0
                       ? "bg-white/10 ring-1 ring-white/15"
                       : "bg-white/5 ring-1 ring-white/10"
                   }`}
@@ -58,17 +58,19 @@ export function LiveMusicStrip() {
                     {monthDay}
                   </span>
                   <div className="mt-4 flex-1">
-                    {entry.act ? (
-                      <>
-                        <p className="font-sans text-base font-semibold text-white">
-                          {entry.act}
-                        </p>
-                        {entry.genre && (
-                          <p className="mt-1 font-sans text-sm text-bay-200">
-                            {entry.genre}
-                          </p>
-                        )}
-                      </>
+                    {entry.acts.length > 0 ? (
+                      <ul className="space-y-2">
+                        {entry.acts.map((act, n) => (
+                          <li key={`${act.name}-${n}`}>
+                            <p className="font-sans text-base font-semibold leading-tight text-white">
+                              {act.name}
+                            </p>
+                            <p className="mt-0.5 font-sans text-sm text-bay-200">
+                              {act.time}
+                            </p>
+                          </li>
+                        ))}
+                      </ul>
                     ) : (
                       <p className="font-sans text-sm italic text-white/40">
                         No show scheduled

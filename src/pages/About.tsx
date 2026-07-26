@@ -75,7 +75,7 @@ export function About() {
               dinner, and dinner turns into staying for the band.
             </p>
             <p className="mt-4 font-sans text-base leading-relaxed text-sand-200 sm:text-lg">
-              Live entertainment runs Thursday through Sunday, and the kitchen
+              Live entertainment runs seven days a week, and the kitchen
               and bar keep going right alongside it: craft cocktails,
               made-from-scratch desserts, and a menu built for sharing.
             </p>
@@ -96,7 +96,7 @@ export function About() {
               Reserve a Table
             </Button>
             <Button href="/menus" variant="secondary">
-              View Menus
+              View Menu
             </Button>
           </div>
         </Reveal>
