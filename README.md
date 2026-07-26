@@ -43,7 +43,8 @@ Everything a non-developer would want to update lives in `src/data/`:
 
 | File | What it controls |
 | --- | --- |
-| `src/data/siteInfo.ts` | Business name, address, phone, hours, and links (OpenTable, Toast gift cards, Facebook, Instagram, Google Maps), main nav |
+| `src/data/siteInfo.ts` | Business name, address, phone, **hours** (currently 11:00 AM – 10:00 PM, seven days), and links (OpenTable, Toast gift cards, Facebook, Instagram, Google Maps), main nav |
+| `src/data/images.ts` | Every photo used on the site — path, alt text, focal point |
 | `src/data/menu.ts` | Every menu category and item shown on the homepage "On the Menu" cards and the full `/menus` page (Lunch & Dinner, Vegan/Vegetarian & GF, Desserts, Cocktails, Kids) |
 | `src/data/liveMusic.ts` | The live music schedule — **single source of truth** for both the homepage "Live this week" strip and the full `/live-music` calendar. Add a row per date; set `act: null` to show "No show scheduled." |
 | `src/data/testimonials.ts` | Guest quotes shown in the "Guest Stories" section. The first one (Tiffany M.) is a real review; the other two are marked `isPlaceholder: true` — replace them with real reviews and remove that flag |
@@ -54,32 +55,44 @@ or menu items — just edit the relevant data file and save.
 
 ## Images
 
-**No third-party images are hotlinked anywhere in this project.** Every
-"photo" you see is a generated, on-brand SVG placeholder built from the
-Boathouse palette (see `src/components/PlaceholderImage.tsx`) — sunset
-gradients, dock silhouettes, plated food, string lights, etc. — so the
-mockup looks intentional rather than leaving grey boxes, and so it runs
-fully offline with zero external image dependencies.
+All photography is **real Boathouse Eatery imagery** supplied by the
+client, served locally from `public/images/`. Nothing is hotlinked from a
+third-party CDN.
 
-**Every placeholder currently in use:**
+Every image is registered once in `src/data/images.ts` with its path, alt
+text and an optional focal point. Components reference images by key, so
+**to swap a photo you only change that one file** — drop the new file into
+`public/images/` and update the `src`.
 
-| Variant | Used in |
-| --- | --- |
-| `sunset-bay` | Homepage hero |
-| `patio-golden` | Homepage "Welcome" section, About "Patio" section, gallery |
-| `dock-twilight` | Homepage "Experience" section, Gallery page banner, gallery grid |
-| `interior-timber` | Homepage "Private Events" section, About page, gallery |
-| `wine-glasses` | Contact page banner, gallery |
-| `waterfront-view` | Homepage reservations CTA band, About page banner, gallery |
-| `food-calamari`, `food-salad`, `dessert`, `burger`, `cocktail` | Menus page banner, gallery |
-| `live-band` | Live Music page banner, gallery |
+| Key | File | Used in |
+| --- | --- | --- |
+| `logo` | `boathouse-round-logo.jpg` | Header, footer |
+| `patioSunset` | `patio-sunset-crowd.jpeg` | Homepage hero, About, reservations CTA |
+| `patioDaytime` | `patio-daytime-cruise-ship.jpeg` | Welcome section, About banner |
+| `tikiHut` | `tiki-hut-patio.jpeg` | Experience cards, Gallery + Contact banners |
+| `barInterior` | `bar-interior-edison.jpeg` | Experience cards, About |
+| `interiorPaddleboard` | `interior-paddleboard.jpeg` | Experience cards, Private Events |
+| `liveMusic` | `live-music-duo-sunset.jpeg` | Live Music strip + page banner |
+| `fishAndChips` | `kitchen-fish-and-chips.jpeg` | Menu feature card, Menus banner |
+| `serverPlates` | `server-fish-chips-bowl.jpeg` | Welcome inset |
+| `iceCream` | `dockside-sweets-treats.jpeg` | Dockside Sweets & Treats section |
 
-**To swap in real photography:** replace the `<PlaceholderImage variant="..." alt="..." />`
-usage with a standard `<img src="/images/whatever.jpg" alt="..." />` (drop
-real photos into `public/images/`), or keep the same component API and
-swap its internals. Update the `alt` text on each usage to describe the
-real photo. Gallery entries in `src/data/gallery.ts` carry their own `alt`
-text per image — update those too.
+**Unused file:** `summer-hours-banner.jpeg` is kept in `public/images/`
+for reference but is not rendered anywhere — it has "11am–11pm" text baked
+into it, which no longer matches the site hours (11:00 AM – 10:00 PM).
+Delete it or replace it with an updated graphic.
+
+### Known content still needing real data
+
+- **Menu items and prices** in `src/data/menu.ts` are realistic
+  placeholders, labelled as such on the page.
+- **Live music act names** in `src/data/liveMusic.ts` are sample data.
+  The days (Thursday–Sunday) match boathouseeatery.com, but the real site
+  doesn't publish act names, so a visible "Sample schedule" banner is
+  shown on `/live-music`. Set `showSampleNotice = false` once the real
+  calendar is in.
+- **Two of the three testimonials** in `src/data/testimonials.ts` are
+  placeholders, flagged in the UI. The Tiffany M. quote is real.
 
 ## Project structure
 
