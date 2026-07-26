@@ -19,7 +19,9 @@ export function PageBanner({ eyebrow, title, subtitle, image }: Props) {
         <Photo image={image} priority className="h-full w-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-bay-950/90 via-bay-950/55 to-bay-950/40" />
       </div>
-      <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-12 pt-[calc(var(--header-h)+2.5rem)] sm:px-8">
+      {/* max() keeps a safe floor even if --header-h is never updated from
+          its fallback, so the copy clears the header regardless. */}
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-12 pt-[max(calc(var(--header-h)+2.5rem),8.5rem)] sm:px-8">
         <p className="flex items-center gap-3 font-sans text-xs font-semibold uppercase tracking-[0.25em] text-amber-300">
           <span className="h-px w-8 bg-amber-300/70" />
           {eyebrow}

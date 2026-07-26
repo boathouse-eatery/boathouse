@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { navLinks, siteInfo } from "../data/siteInfo";
 import { Logo } from "./Logo";
@@ -6,8 +6,30 @@ import { Logo } from "./Logo";
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const headerRef = useRef<HTMLElement | null>(null);
   const location = useLocation();
   const isHome = location.pathname === "/";
+
+  // Publish the header's real height as --header-h so page banners, sticky
+  // sub-navs and anchor scroll offsets stay clear of it. Hard-coding the
+  // height broke as soon as it changed (condensing on scroll, the wordmark
+  // wrapping on narrow screens, or a reader zooming their font size).
+  useEffect(() => {
+    const el = headerRef.current;
+    if (!el) return;
+
+    const publish = () => {
+      const h = el.getBoundingClientRect().height;
+      if (h > 0) {
+        document.documentElement.style.setProperty("--header-h", `${Math.round(h)}px`);
+      }
+    };
+
+    publish();
+    const observer = new ResizeObserver(publish);
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -33,6 +55,7 @@ export function Header() {
 
   return (
     <header
+      ref={headerRef}
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${headerBgClasses}`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 sm:px-8">

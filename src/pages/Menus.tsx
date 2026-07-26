@@ -16,7 +16,7 @@ function MenuSectionBlock({ section }: { section: MenuSection }) {
     <section
       id={section.id}
       // clears the fixed header *and* the sticky section nav below it
-      className="scroll-mt-[calc(var(--header-h-condensed)+4.5rem)] border-b border-bay-100 py-14 last:border-none"
+      className="scroll-mt-[calc(var(--header-h)+4.5rem)] border-b border-bay-100 py-14 last:border-none"
     >
       <Reveal>
         <h2 className="font-serif text-2xl font-semibold text-bay-800 sm:text-3xl">
@@ -100,7 +100,7 @@ export function Menus() {
 
         <nav
           aria-label="Menu sections"
-          className="sticky top-[var(--header-h-condensed)] z-30 -mt-px flex gap-6 overflow-x-auto border-b border-bay-100 bg-white/95 px-6 py-4 backdrop-blur scrollbar-none sm:justify-center sm:px-8"
+          className="sticky top-[var(--header-h)] z-30 -mt-px flex gap-6 overflow-x-auto border-b border-bay-100 bg-white/95 px-6 py-4 backdrop-blur scrollbar-none sm:justify-center sm:px-8"
         >
           {allMenuSections.map((section) => (
             <a

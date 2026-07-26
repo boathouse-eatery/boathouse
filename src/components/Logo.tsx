@@ -29,14 +29,14 @@ export function Logo({ light = false, size = 44, showWordmark = true }: Props) {
       {showWordmark && (
         <span className="flex flex-col leading-none">
           <span
-            className={`font-serif text-base font-semibold tracking-tight sm:text-lg ${
+            className={`whitespace-nowrap font-serif text-base font-semibold tracking-tight sm:text-lg ${
               light ? "text-white" : "text-bay-800"
             }`}
           >
             Boathouse Eatery
           </span>
           <span
-            className={`mt-0.5 font-sans text-[10px] font-medium uppercase tracking-[0.18em] ${
+            className={`mt-0.5 whitespace-nowrap font-sans text-[10px] font-medium uppercase tracking-[0.18em] ${
               light ? "text-bay-100" : "text-bay-500"
             }`}
           >
