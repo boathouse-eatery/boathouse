@@ -23,9 +23,7 @@ export function Hero() {
             Town Docks · Midland, Ontario
           </p>
           <h1 className="mt-6 font-serif text-[2.6rem] font-semibold leading-[1.02] text-white sm:text-6xl md:text-7xl">
-            The best seat on
-            <br />
-            Georgian Bay.
+            EAT SOME FOOD
           </h1>
           <p className="mt-6 max-w-xl font-sans text-lg leading-relaxed text-white/85 sm:text-xl">
             Three decades on the Midland waterfront. Fresh, seasonal dishes,
