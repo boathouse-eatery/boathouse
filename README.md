@@ -26,16 +26,16 @@ npm run preview   # preview the production build locally
 npm run lint      # run oxlint
 ```
 
-> **Note for this specific folder:** this project lives at a path
-> containing an `&` (`...Admin & Management\Website Build`). On Windows,
+> **Why the scripts call `node` directly:** until 2026-11-09 this project
+> lived in the SharePoint library at a path containing an `&`. On Windows,
 > npm's generated `.cmd` shims (the usual way `npm run dev` invokes `vite`/
 > `tsc`) mis-parse paths containing `&`, which breaks `npm run dev` /
 > `npm run build` with a confusing "Cannot find module" error. To work
 > around it, the scripts in `package.json` call `node` directly on each
 > tool's JS entry point (e.g. `node node_modules/vite/bin/vite.js`)
-> instead of relying on the shim. This has been tested and works from this
-> folder. If you ever move the project to a path without `&` in it, the
-> scripts still work exactly the same way.
+> instead of relying on the shim. The project now lives at a path with no
+> `&`, and the scripts work the same either way, so there is no need to
+> change them back.
 
 ## Editing content
 
