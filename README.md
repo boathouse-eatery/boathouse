@@ -117,3 +117,25 @@ This is a local mockup only — nothing has been pushed to GitHub or
 deployed yet. Once it's been reviewed, the next step is to initialize git,
 push to a GitHub repo under the client's own account, and deploy to
 Vercel under the client's own account.
+
+## Set up on a new computer
+
+The repo lives at `C:\Users\<you>\code\boathouse\boathouse-website`. Never put
+it in a OneDrive or SharePoint folder (it moved out of `Admin & Management\Website Build`
+on 2026-11-09). GitHub is the backup.
+
+```
+git clone git@github-boathouse:boathouse-eatery/boathouse.git boathouse-website
+cd boathouse-website
+npm install
+npm run build
+```
+
+`github-boathouse` is an SSH host alias for the boathouse-eatery key (see
+`~/.ssh/config` and the `includeIf` rule in `~/.gitconfig`). Without it, clone
+from `https://github.com/boathouse-eatery/boathouse.git`.
+
+- **Environment variables:** none. The site reads no env vars, so there is
+  nothing to copy from Vercel or LastPass.
+- **Deploys:** Vercel builds `main` on every push.
+- **Scheduled tasks and local scripts:** none depend on this repo.
